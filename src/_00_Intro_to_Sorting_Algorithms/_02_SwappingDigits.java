@@ -5,6 +5,9 @@ class _02_SwappingDigits {
     // 1. Complete the method so that the first two elements of the array are
     //    swapped.
     public static void swapArrayOfTwo(int[] arr) {
+int temp = arr[0];
+arr[0] = arr[1];
+arr[1] = arr[0];
 
     }
 
