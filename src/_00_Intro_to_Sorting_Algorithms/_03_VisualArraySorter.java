@@ -52,17 +52,28 @@ int[] array;
     @Override
     public void setup() {
         array = new int[50];
-        for (int i = 0; i < array.length; i++) {
-        Random ran = new Random();
-        int random = ran.nextInt(HEIGHT);
-        array[i] = random;
+        randommethod();
         noStroke();
-    }}
-
+    }
+public void randommethod() {
+	for (int i = 0; i < array.length; i++) {
+		Random ran = new Random();
+		int random = ran.nextInt(HEIGHT);
+		array[i] = random;
+	}	
+		if (mousePressed) {
+			randommethod();
+		}
+}
     @Override
     public void draw() {
         background(255, 255, 255);
-     rectangle(WIDTH/array.length, HEIGHT, WIDTH/array.length, -array[i]);
+        for (int j = 0; j < array.length; j++) {
+			
+		fill(255, 0 ,0);
+     rect(j * WIDTH/array.length, HEIGHT, WIDTH/array.length, -array[j]);
+        }
+        stepSort(array);
     }
 
     static public void main(String[] passedArgs) {
