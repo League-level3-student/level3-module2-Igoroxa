@@ -71,7 +71,7 @@ public class Algorithms {
 
 	public static double findTallest(List<Double> peeps) {
 		Double highest = 0.0;
-		for (int i = 0; i < peeps.size(); i++) {
+		for (int i = 0; i < peeps.size(); i++) { 
 			if(highest < peeps.get(i)) {
 				highest = peeps.get(i);
 			}
@@ -93,4 +93,55 @@ public class Algorithms {
 		System.out.println(longestword);
 		return longestword;
 	}
+
+	public static Object containsSOS(List<String> message1) {
+if (message1.contains("... --- ...") == true) {
+	return true;
+	
+}
+		return false;
+	}
+
+	public static List<Double> sortScores(List<Double> results) {
+	
+		for (int i = 0; i < results.size(); i++) {
+			for (int j = 0; j < results.size()-1; j++) {
+				if (results.get(j) > results.get(j+1)) {
+					Double temp = results.get(j);
+					results.set(j, results.get(j+1));
+					results.set(j+1, temp);
+				}
+			}
+		}
+		return results;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			for (int j = 0; j < unsortedSequences.size()-1; j++) {
+				if (unsortedSequences.get(j).length() > unsortedSequences.get(j+1).length()) {
+					String temp = unsortedSequences.get(j);
+					unsortedSequences.set(j, unsortedSequences.get(j+1));
+					unsortedSequences.set(j+1, temp);
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = 0; j < words.size()-1; j++) {
+				if (words.get(j).compareTo(words.get(j+1)) > 0)  {
+					String temp = words.get(j);
+					words.set(j, words.get(j+1));
+					words.set(j+1, temp);
+				}
+			}
+		}
+		return words;
+	}
+	
+	
 }
